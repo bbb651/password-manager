@@ -15,7 +15,7 @@
 	<label for="title">Title:</label>
 	<input type="text" id="title" name="title" bind:value={title}>
 	<label for="password">Password:</label>
-	<input type="text" id="password" name="password" bind:value={password}>
+	<input type="password" id="password" name="password" bind:value={password}>
 	<label for="username">Username:</label>
 	<input type="text" id="username" name="username" bind:value={username}>
 	<label for="url">URL:</label>

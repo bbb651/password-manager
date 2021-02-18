@@ -5,7 +5,8 @@
 
 	const copy = (e: MouseEvent) => {
 		const entry: HTMLElement = (e.target as HTMLElement).parentElement;
-		navigator.clipboard.writeText(entry.children[1].textContent);
+		const index = elementIndexInParent(entry) - 1;
+		navigator.clipboard.writeText(passwords[index].password);
 	};
 
 	const remove = (e: MouseEvent) => {
@@ -28,7 +29,7 @@
 		<tr>
 			<td>{password.title ?? ""}</td>
 			<td>
-				{password.password}
+				{password.password.replaceAll(/./g, "•")}
 			</td>
 			<td>{password.username ?? ""}</td>
 			<td
