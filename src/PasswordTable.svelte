@@ -3,6 +3,7 @@
 	import type { Password } from "./types/Password";
 	import { elementIndexInParent } from "./util";
 	export let passwords: Password[];
+	export let storeDatabase;
 
 	const copy = (e: MouseEvent) => {
 		const entry: HTMLElement = (e.target as HTMLElement).parentElement;
@@ -15,6 +16,7 @@
 		const index = elementIndexInParent(entry) - 1;
 		passwords.splice(index, 1);
 		passwords = passwords;
+		storeDatabase();
 	};
 </script>
 

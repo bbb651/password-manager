@@ -1,6 +1,7 @@
 <script lang="ts">
 
 	export let addPassword;
+	export let storeDatabase;
 
 	let title: string;
 	let password: string;
@@ -13,6 +14,7 @@
 		if (!password)
 			return;
 		addPassword({title, password, username, url, notes});
+		storeDatabase();
 		title = "";
 		password = "";
 		username = "";

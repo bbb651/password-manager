@@ -2,8 +2,17 @@
 	import PasswordTable from "./PasswordTable.svelte";
 	import PasswordForm from "./PasswordForm.svelte";
 	import type { Password } from "./types/Password";
+import { onMount } from "svelte";
 
 	let passwords: Password[] = [];
+
+	onMount(() => {
+		passwords = JSON.parse(window.localStorage.getItem("passworddatabase")) || [];
+	});
+
+	const storeDatabase = () => {
+		window.localStorage.setItem("passworddatabase", JSON.stringify(passwords));
+	};
 
 	const addPassword = (password: Password) => {
 		passwords = [...passwords, password];
@@ -12,8 +21,8 @@
 
 <main>
 	<h1>Password Manager</h1>
-	<PasswordTable {passwords} />
-	<PasswordForm {addPassword} />	
+	<PasswordTable {passwords} {storeDatabase} />
+	<PasswordForm {addPassword} {storeDatabase} />	
 </main>
 
 <style>
