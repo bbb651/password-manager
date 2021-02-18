@@ -31,10 +31,14 @@
 	<label for="url">URL:</label>
 	<input type="text" id="url" name="url" bind:value={url}>
 	<label for="notes">Notes:</label>
-	<input type="text" id="notes" name="notes" bind:value={notes}>
+	<textarea name="notes" id="notes" bind:value={notes}></textarea>
 	<br>
 	<input disabled={!password} type="submit" id="submit" value="Add password">
 </form>
 
 <style>
+	textarea {
+		width: 300px;
+		height: 100px;
+	}
 </style>
