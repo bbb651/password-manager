@@ -2,17 +2,22 @@
 
 	export let addPassword;
 
-	let title;
-	let password;
-	let username;
-	let url;
-	let notes;
+	let title: string;
+	let password: string;
+	let username: string;
+	let url: string;
+	let notes: string;
 
 	const submit = (e) => {
 		// Safe guard to keep undefined or empty passwords from going through
 		if (!password)
 			return;
 		addPassword({title, password, username, url, notes});
+		title = "";
+		password = "";
+		username = "";
+		url = "";
+		notes = "";
 	};
 </script>
 
