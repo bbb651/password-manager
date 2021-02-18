@@ -94,6 +94,7 @@
 
 	.bi {
 		display: inline-block;
+		cursor: pointer;
 		vertical-align: middle;
 		margin-right: 10px;
 	}
