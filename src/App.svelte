@@ -1,6 +1,8 @@
 <script lang="ts">
 	import PasswordTable from "./PasswordTable.svelte";
+	import PasswordFrom from "./PasswordForm.svelte";
 	import type { Password } from "./types/Password";
+import PasswordForm from "./PasswordForm.svelte";
 	const passwords: Password[] = [
 		{password: "p4ssword", username: "coolkid72", title: "Google", url:"google.com", notes: "some notes"}
 	];
@@ -9,6 +11,7 @@
 <main>
 	<h1>Password Manager</h1>
 	<PasswordTable {passwords} />
+	<PasswordForm />	
 </main>
 
 <style>
