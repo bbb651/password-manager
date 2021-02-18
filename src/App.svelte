@@ -31,15 +31,21 @@ import PasswordForm from "./PasswordForm.svelte";
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #fff;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
 	}
-
+	
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
+		}
+	}
+	
+	@media (prefers-color-scheme: light) {
+		h1 {
+			color: #ff3e00;
 		}
 	}
 </style>
