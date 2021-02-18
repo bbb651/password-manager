@@ -1,19 +1,22 @@
-html, body {
+html,
+body {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
 body {
-	color: #333;
+	color: #fff;
+	background-color: #1e1e1e;
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 a {
-	color: rgb(0,100,200);
+	color: #007acc;
 	text-decoration: none;
 }
 
@@ -22,47 +25,97 @@ a:hover {
 }
 
 a:visited {
-	color: rgb(0,80,160);
+	color: #6358ff;
 }
 
 label {
 	display: block;
 }
 
-input, button, select, textarea {
+input,
+button,
+select,
+textarea {
+	color: #fff;
+	background-color: #1e1e1e;
 	font-family: inherit;
 	font-size: inherit;
 	-webkit-padding: 0.4em 0;
 	padding: 0.4em;
 	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
-	border: 1px solid #ccc;
+	border: 1px solid #5c5c5c;
 	border-radius: 2px;
 }
 
 input:disabled {
-	color: #ccc;
+	color: #6e6e6e;
 }
 
-input[type=submit] {
+input[type="submit"] {
 	cursor: pointer;
 }
 
 button {
-	color: #333;
-	background-color: #f4f4f4;
+	background-color: #333;
+	color: #f4f4f4;
 	outline: none;
 	cursor: pointer;
 }
 
 button:disabled {
-	color: #999;
+	color: #2e2e2e;
 }
 
 button:not(:disabled):active {
-	background-color: #ddd;
+	background-color: #202020;
 }
 
 button:focus {
 	border-color: #666;
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		color: #333;
+		background-color: #fff;
+	}
+
+	a {
+		color: #0064c8;
+	}
+
+	a:visited {
+		color: #0050a0;
+	}
+
+	input,
+	button,
+	select,
+	textarea {
+		border: 1px solid #ccc;
+		color: #333;
+		background-color: #fff;
+	}
+
+	input:disabled {
+		color: #ccc;
+	}
+
+	button {
+		color: #333;
+		background-color: #f4f4f4;
+	}
+
+	button:disabled {
+		color: #999;
+	}
+
+	button:not(:disabled):active {
+		background-color: #ddd;
+	}
+
+	button:focus {
+		border-color: #666;
+	}
 }
