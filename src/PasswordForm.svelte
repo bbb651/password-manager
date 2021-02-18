@@ -1,5 +1,7 @@
 <script lang="ts">
 
+	export let addPassword;
+
 	let title;
 	let password;
 	let username;
@@ -7,7 +9,10 @@
 	let notes;
 
 	const submit = (e) => {
-		console.log({title, password, username, url, notes});
+		// Safe guard to keep undefined or empty passwords from going through
+		if (!password)
+			return;
+		addPassword({title, password, username, url, notes});
 	};
 </script>
 
@@ -23,11 +28,8 @@
 	<label for="notes">Notes:</label>
 	<input type="text" id="notes" name="notes" bind:value={notes}>
 	<br>
-	<input type="submit" id="submit" value="Add password">
+	<input disabled={!password} type="submit" id="submit" value="Add password">
 </form>
 
 <style>
-	#submit {
-		cursor: pointer;
-	}
 </style>
